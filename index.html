@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore the Planets</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    nav a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #2980b9;
+      cursor: pointer;
+    }
+    section {
+      display: none;
+      margin-top: 20px;
+    }
+    section.active {
+      display: block;
+    }
+    input[type=text], input[type=password] {
+      width: 200px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    input[type=submit] {
+      padding: 5px 15px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Explore the Solar System</h1>
+
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('planets')">Planets</a>
+    <a onclick="showSection('login')">Login</a>
+  </nav>
+
+  <section id="home" class="active">
+    <p>Discover the amazing planets that orbit our Sun!</p>
+  </section>
+
+  <section id="planets">
+    <h2>Planets in Our Solar System</h2>
+    <ul>
+      <li><strong>Mercury</strong> - The smallest and closest planet to the Sun.</li>
+      <li><strong>Venus</strong> - The hottest planet in the solar system.</li>
+      <li><strong>Earth</strong> - Our home, the only known planet with life.</li>
+      <li><strong>Mars</strong> - The red planet, a candidate for future colonization.</li>
+      <li><strong>Jupiter</strong> - The largest planet with a Great Red Spot.</li>
+      <li><strong>Saturn</strong> - Famous for its beautiful rings.</li>
+      <li><strong>Uranus</strong> - A tilted planet with a bluish color.</li>
+      <li><strong>Neptune</strong> - The farthest known planet, deep blue in color.</li>
+    </ul>
+  </section>
+
+  <section id="login">
+    <h2>Login to Your Space Mission</h2>
+    <form>
+      <label>Username:</label><br>
+      <input type="text" name="username"><br>
+      <label>Password:</label><br>
+      <input type="password" name="password"><br><br>
+      <input type="submit" value="Launch">
+    </form>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
